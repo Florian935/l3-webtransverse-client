@@ -7,13 +7,13 @@ import Book from './components/books/Book';
 function App() {
   return (
     <div className='App'>
-      <Header />
       <Router>
+        <Header />
         <Switch>
           <Route path='/home'>
             <Home />
           </Route>
-          <Route>
+          <Route path='/book'>
             <Book />
           </Route>
         </Switch>

@@ -1,6 +1,14 @@
 .header {
-  background-color: #282c34;
+  background-color: #323259;
   display: flex;
   flex-direction: row;
   color: white;
+
+  h2 {
+    margin-left: 10px;
+  }
+
+  .filler {
+    flex: 1 1 auto;
+  }
 }

@@ -5,7 +5,7 @@ import '../../styles/Navbar.scss';
 export default function Navbar(props) {
   return (
     <Fragment>
-      <nav>
+      <nav className='nav'>
         <ul className='nav-list'>
           <li>
             <Link to='/home' className='link'>

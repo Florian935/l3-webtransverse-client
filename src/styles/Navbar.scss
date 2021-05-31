@@ -1,15 +1,25 @@
-.nav-list {
-  list-style: none;
+.nav {
   display: flex;
-  padding: 0;
+  padding-top: 8px;
+  margin-right: 10px;
 
-  .link {
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
+  .nav-list {
+    list-style: none;
+    display: flex;
+    padding: 0;
 
-    &:hover {
-      color: rgb(187, 187, 187);
+    .link {
+      color: #fffbff;
+      text-decoration: none;
+      font-size: 20px;
+      padding: 5px 12px 7px 12px;
+      margin: 20px 5px 5px 10px;
+      background-color: #b18aff;
+      border-radius: 3px;
+
+      &:hover {
+        background-color: #c3a4ff;
+      }
     }
   }
 }
