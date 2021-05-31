@@ -1,0 +1,46 @@
+html {
+  height: 100vh;
+}
+
+body {
+  height: inherit;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  flex: 1;
+  text-align: center;
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-with-logo {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5em 1em;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+
+.nav-list li {
+  padding: 0.25em;
+  flex: 1 1;
+  border: 1px solid #494949;
+}
