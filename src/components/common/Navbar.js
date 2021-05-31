@@ -1,21 +1,24 @@
-import { Component } from 'react';
+import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import '../../styles/Navbar.scss';
 
-class Navbar extends Component {
-  render() {
-    return (
+export default function Navbar(props) {
+  return (
+    <Fragment>
       <nav>
         <ul className='nav-list'>
           <li>
-            <Link to='/home'>Home</Link>
+            <Link to='/home' className='link'>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to='/book'>Book</Link>
+            <Link to='/book' className='link'>
+              Book
+            </Link>
           </li>
         </ul>
       </nav>
-    );
-  }
+    </Fragment>
+  );
 }
-
-export default Navbar;

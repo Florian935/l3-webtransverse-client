@@ -1,9 +1,9 @@
-import { Component } from 'react';
+import { Fragment } from 'react';
 
-class Book extends Component {
-  render() {
-    return <h2>Book page</h2>;
-  }
+export default function Book(props) {
+  return (
+    <Fragment>
+      <h2>Book page</h2>
+    </Fragment>
+  );
 }
-
-export default Book;

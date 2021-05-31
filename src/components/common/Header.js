@@ -1,15 +1,14 @@
-import { Component } from 'react';
+import { Fragment } from 'react';
+import Navbar from './Navbar';
+import '../../styles/Header.scss';
 
-class Header extends Component {
-  render() {
-    return (
+export default function Header(props) {
+  return (
+    <Fragment>
       <div className='header'>
-        <div className='title-with-logo'>
-          <h2 className='header-title'>Project App</h2>
-        </div>
+        <h2>Book library App</h2>
+        <Navbar />
       </div>
-    );
-  }
+    </Fragment>
+  );
 }
-
-export default Header;

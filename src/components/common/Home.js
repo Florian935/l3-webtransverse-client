@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component, Fragment } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import gpl from 'graphql-tag';
 
@@ -16,14 +16,12 @@ function CheckConfig() {
   return <span className='status-ok'>OK</span>;
 }
 
-class Home extends Component {
-  render() {
-    return (
+export default function Home(props) {
+  return (
+    <Fragment>
       <p>
         GraphQL status: <CheckConfig />
       </p>
-    );
-  }
+    </Fragment>
+  );
 }
-
-export default Home;
