@@ -1,8 +1,59 @@
 .header {
   background-color: #323259;
   display: flex;
-  flex-direction: row;
+  align-items: center;
   color: white;
+
+  .fi-menu {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+  }
+
+  .title-with-logo {
+    display: flex;
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  .sidebar-list {
+    position: absolute;
+    left: 0;
+    top: 70px;
+    bottom: 0;
+    padding: 1em;
+    background-color: #323259;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      color: white;
+      li {
+        padding: 0.5em;
+        list-style: none;
+        color: white;
+
+        .link {
+          color: #fffbff;
+          text-decoration: none;
+          font-size: 20px;
+
+          &:hover {
+            color: #b18aff;
+          }
+        }
+      }
+    }
+  }
 
   h2 {
     margin-left: 10px;
