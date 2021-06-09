@@ -5,7 +5,7 @@ import { FiMenu } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 export default function Header(props) {
-  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [navbarOpen, setNavbarOpen] = useState({ navbarOpen: false });
 
   const toggleNavbar = () => {
     setNavbarOpen(!navbarOpen);
