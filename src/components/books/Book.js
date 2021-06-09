@@ -28,7 +28,6 @@ export default function Book(props) {
 
   const onDeleteBook = (event, id) => {
     event.preventDefault();
-    console.log(id);
     deleteBook({
       variables: { id },
     });
@@ -65,6 +64,7 @@ export default function Book(props) {
               </button>
             </li>
           ))}
+          {console.log(data.books.length)}
         </ul>
       </div>
 
