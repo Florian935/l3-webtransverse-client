@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import gpl from 'graphql-tag';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/react-hooks';
 import { Link } from 'react-router-dom';
 
 const GET_BOOKS = gpl`
@@ -16,8 +16,24 @@ const GET_BOOKS = gpl`
     }
 `;
 
+const DELETE_BOOK = gpl`
+    mutation deleteBook($id: ID!) {
+        deleteBook(_id: $id)
+    }
+`;
+
 export default function Book(props) {
   const { loading, error, data } = useQuery(GET_BOOKS);
+  const [deleteBook] = useMutation(DELETE_BOOK);
+
+  const onDeleteBook = (event, id) => {
+    event.preventDefault();
+    console.log(id);
+    deleteBook({
+      variables: { id },
+    });
+    data.books = data.books.filter((book) => book._id !== id);
+  };
 
   if (loading) {
     return (
@@ -44,6 +60,9 @@ export default function Book(props) {
             <li key={book._id} value={book.name} className='project-list-book'>
               <h3>{book.name}</h3>
               <p>{book.description}.</p>
+              <button onClick={(e) => onDeleteBook(e, book._id)}>
+                Supprimer
+              </button>
             </li>
           ))}
         </ul>
