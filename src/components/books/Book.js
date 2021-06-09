@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import gpl from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
+import { Link } from 'react-router-dom';
 
 const GET_BOOKS = gpl`
     query Books {
@@ -21,7 +22,15 @@ export default function Book(props) {
   if (loading) {
     return (
       <Fragment>
-        <div>"Loading..."</div>
+        <div>Loading...</div>
+      </Fragment>
+    );
+  }
+
+  if (error) {
+    return (
+      <Fragment>
+        <div>An error occured while retrieving books from server.</div>
       </Fragment>
     );
   }
@@ -29,7 +38,7 @@ export default function Book(props) {
   return (
     <Fragment>
       <div className='container'>
-        <h4>List of all projects.</h4>
+        <h4>List of all books:</h4>
         <ul>
           {data.books.map((book) => (
             <li key={book._id} value={book.name} className='project-list-book'>
@@ -39,6 +48,10 @@ export default function Book(props) {
           ))}
         </ul>
       </div>
+
+      <Link to='/book/add' className='link'>
+        Add book
+      </Link>
     </Fragment>
   );
 }

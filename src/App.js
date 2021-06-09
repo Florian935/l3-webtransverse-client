@@ -3,6 +3,7 @@ import Header from './components/common/Header';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import Home from './components/common/Home';
 import Book from './components/books/Book';
+import AddBook from './components/books/AddBook';
 
 function App() {
   return (
@@ -10,11 +11,14 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path='/home'>
+          <Route exact path='/home'>
             <Home />
           </Route>
-          <Route path='/book'>
+          <Route exact path='/book'>
             <Book />
+          </Route>
+          <Route exact path='/book/add'>
+            <AddBook />
           </Route>
         </Switch>
       </Router>
