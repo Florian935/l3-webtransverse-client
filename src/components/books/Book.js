@@ -3,7 +3,7 @@ import gpl from 'graphql-tag';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { Link } from 'react-router-dom';
 
-const GET_BOOKS = gpl`
+export const GET_BOOKS = gpl`
     query Books {
         books {
             _id
@@ -56,7 +56,7 @@ export default function Book(props) {
         <h4>List of all books:</h4>
         <ul>
           {data.books.map((book) => (
-            <li key={book._id} value={book.name} className='project-list-book'>
+            <li key={book._id} value={book.name}>
               <h3>{book.name}</h3>
               <p>{book.description}.</p>
               <button onClick={(e) => onDeleteBook(e, book._id)}>
@@ -64,7 +64,6 @@ export default function Book(props) {
               </button>
             </li>
           ))}
-          {console.log(data.books.length)}
         </ul>
       </div>
 

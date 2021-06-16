@@ -2,6 +2,7 @@ import { useMutation } from '@apollo/react-hooks';
 import { Fragment, useState } from 'react';
 import gpl from 'graphql-tag';
 import { useHistory } from 'react-router';
+import { GET_BOOKS } from './Book';
 
 const ADD_BOOK = gpl`
     mutation createBook($name: String!, $description: String!) {
@@ -22,6 +23,7 @@ export default function AddBook(props) {
     event.preventDefault();
     addBook({
       variables: { name: getData('name'), description: getData('description') },
+      refetchQueries: [{ query: GET_BOOKS }],
     }).then((unusedResponse) => history.push('/book'));
   };
 

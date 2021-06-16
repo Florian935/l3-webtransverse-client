@@ -17,6 +17,11 @@ export default function Navbar(props) {
               Book
             </Link>
           </li>
+          <li>
+            <Link to='/user' className='link'>
+              User
+            </Link>
+          </li>
         </ul>
       </nav>
     </Fragment>

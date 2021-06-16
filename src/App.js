@@ -4,6 +4,8 @@ import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import Home from './components/common/Home';
 import Book from './components/books/Book';
 import AddBook from './components/books/AddBook';
+import User from './components/users/User';
+import UserAdd from './components/users/AddUser';
 
 function App() {
   return (
@@ -19,6 +21,12 @@ function App() {
           </Route>
           <Route exact path='/book/add'>
             <AddBook />
+          </Route>
+          <Route exact path='/user'>
+            <User />
+          </Route>
+          <Route exact path='/user/add'>
+            <UserAdd />
           </Route>
         </Switch>
       </Router>

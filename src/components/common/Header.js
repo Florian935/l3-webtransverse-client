@@ -21,7 +21,7 @@ export default function Header(props) {
           <h2>Book library app</h2>
         </div>
         <span className='filler'></span>
-        {navbarOpen && (
+        {navbarOpen === true && (
           <Fragment>
             <div className='sidebar-list'>
               <nav className='nav'>
@@ -42,6 +42,15 @@ export default function Header(props) {
                       className='link'
                     >
                       Book
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      onClick={() => toggleNavbar()}
+                      to='/user'
+                      className='link'
+                    >
+                      User
                     </Link>
                   </li>
                 </ul>
