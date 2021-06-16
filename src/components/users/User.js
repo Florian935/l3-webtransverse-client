@@ -29,7 +29,6 @@ export default function User(props) {
     event.preventDefault();
     deleteUser({
       variables: { id },
-      refetchQueries: [{ query: GET_USERS }],
     });
     data.users = data.users.filter((user) => user._id !== id);
   };
@@ -58,8 +57,17 @@ export default function User(props) {
           {data.users.map((user) => (
             <li key={user._id} value={user.name}>
               <h3>{user.name}</h3>
+              <div>{user.surname}</div>
+              <div>{user.login}</div>
               <button onClick={(e) => onDeleteUser(e, user._id)}>
                 Supprimer
+              </button>
+              <button>
+                <Link
+                  to={{ pathname: `/user/edit/${user._id}`, state: { user } }}
+                >
+                  Edit
+                </Link>
               </button>
             </li>
           ))}

@@ -5,7 +5,8 @@ import Home from './components/common/Home';
 import Book from './components/books/Book';
 import AddBook from './components/books/AddBook';
 import User from './components/users/User';
-import UserAdd from './components/users/AddUser';
+import AddUser from './components/users/AddUser';
+import EditUser from './components/users/EditUser';
 
 function App() {
   return (
@@ -26,7 +27,10 @@ function App() {
             <User />
           </Route>
           <Route exact path='/user/add'>
-            <UserAdd />
+            <AddUser />
+          </Route>
+          <Route exact path='/user/edit/:_id'>
+            <EditUser />
           </Route>
         </Switch>
       </Router>
