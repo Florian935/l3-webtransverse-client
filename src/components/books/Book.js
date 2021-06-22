@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import gpl from 'graphql-tag';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { Link } from 'react-router-dom';
-import '../../styles/EditBook.scss';
+import '../../styles/Book.scss';
 
 export const GET_BOOKS = gpl`
     query Books {
@@ -71,7 +71,7 @@ export default function Book(props) {
                     Edit
                   </Link>
                   <Link
-                    className='link link-delete'
+                    className='link'
                     onClick={(e) => onDeleteBook(e, book._id)}
                   >
                     Delete
