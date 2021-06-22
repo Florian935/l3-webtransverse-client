@@ -59,9 +59,6 @@ export default function User(props) {
               <h3>{user.name}</h3>
               <div>{user.surname}</div>
               <div>{user.login}</div>
-              <button onClick={(e) => onDeleteUser(e, user._id)}>
-                Supprimer
-              </button>
               <button>
                 <Link
                   to={{ pathname: `/user/edit/${user._id}`, state: { user } }}
@@ -69,6 +66,7 @@ export default function User(props) {
                   Edit
                 </Link>
               </button>
+              <button onClick={(e) => onDeleteUser(e, user._id)}>Delete</button>
             </li>
           ))}
         </ul>

@@ -58,10 +58,15 @@ export default function Book(props) {
           {data.books.map((book) => (
             <li key={book._id} value={book.name}>
               <h3>{book.name}</h3>
-              <p>{book.description}.</p>
-              <button onClick={(e) => onDeleteBook(e, book._id)}>
-                Supprimer
+              <p>{book.description}</p>
+              <button>
+                <Link
+                  to={{ pathname: `/book/edit/${book._id}`, state: { book } }}
+                >
+                  Edit
+                </Link>
               </button>
+              <button onClick={(e) => onDeleteBook(e, book._id)}>Delete</button>
             </li>
           ))}
         </ul>
