@@ -13,13 +13,15 @@
       text-decoration: none;
       font-size: 15px;
       font-weight: bold;
-      padding: 5px 12px 7px 12px;
+      padding: 8px 20px;
       margin: 20px 5px 5px 10px;
-      background-color: #b18aff;
-      border-radius: 3px;
+      background-color: #323259;
+      box-shadow: 5px 5px 8px #1e1e35, -3px -3px 8px rgb(65, 65, 136);
 
       &:hover {
-        background-color: #c3a4ff;
+        background: #323259;
+        box-shadow: inset 5px 5px 8px #1e1e35,
+          inset -3px -3px 8px rgb(65, 65, 136);
       }
     }
   }

@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import gpl from 'graphql-tag';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { Link } from 'react-router-dom';
+import '../../styles/EditBook.scss';
 
 export const GET_BOOKS = gpl`
     query Books {
@@ -52,29 +53,40 @@ export default function Book(props) {
 
   return (
     <Fragment>
-      <div className='container'>
-        <h4>List of all books:</h4>
-        <ul>
-          {data.books.map((book) => (
-            <li key={book._id} value={book.name}>
-              <h3>{book.name}</h3>
-              <p>{book.description}</p>
-              <button>
-                <Link
-                  to={{ pathname: `/book/edit/${book._id}`, state: { book } }}
-                >
-                  Edit
-                </Link>
-              </button>
-              <button onClick={(e) => onDeleteBook(e, book._id)}>Delete</button>
-            </li>
-          ))}
-        </ul>
+      <div className='book-container'>
+        <div className='list-container'>
+          <h2>List of all books:</h2>
+          <ul>
+            {data.books.map((book) => (
+              <li key={book._id} value={book.name}>
+                <div>
+                  <h3>Titre: {book.name}</h3>
+                  <p>Description: {book.description}</p>
+                </div>
+                <div>
+                  <Link
+                    className='link'
+                    to={{ pathname: `/book/edit/${book._id}`, state: { book } }}
+                  >
+                    Edit
+                  </Link>
+                  <Link
+                    className='link link-delete'
+                    onClick={(e) => onDeleteBook(e, book._id)}
+                  >
+                    Delete
+                  </Link>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className='add-book-container'>
+          <Link to='/book/add' className='link'>
+            Add book
+          </Link>
+        </div>
       </div>
-
-      <Link to='/book/add' className='link'>
-        Add book
-      </Link>
     </Fragment>
   );
 }
