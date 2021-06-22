@@ -63,6 +63,9 @@ export default function AddBook(props) {
           <Link to='/book' className='link' onClick={(e) => onSubmitForm(e)}>
             Add book
           </Link>
+          <Link to='/book' className='link'>
+            Back to list
+          </Link>
         </div>
       </div>
     </Fragment>

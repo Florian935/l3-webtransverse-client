@@ -68,7 +68,7 @@ export default function Book(props) {
               >
                 <li key={book._id} value={book.name}>
                   <div>
-                    <h3>Titre: {book.name}</h3>
+                    <h3>{book.name}</h3>
                   </div>
                   <div>
                     <Link
