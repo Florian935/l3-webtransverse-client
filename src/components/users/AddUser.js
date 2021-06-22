@@ -13,7 +13,7 @@ const ADD_USER = gpl`
 export default function AddUser(props) {
   const [formData, setFormData] = useState({});
   const history = useHistory();
-  const [addUser, { data }] = useMutation(ADD_USER);
+  const [addUser] = useMutation(ADD_USER);
 
   const getData = (key) => (formData.hasOwnProperty(key) ? formData[key] : '');
 

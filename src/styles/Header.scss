@@ -66,3 +66,24 @@
     flex: 1 1 auto;
   }
 }
+
+@media (max-width: 900px) {
+  .header {
+    .title-with-logo {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .nav {
+    display: none;
+  }
+
+  .header {
+    .title-with-logo {
+      display: flex;
+      font-size: 14px;
+    }
+  }
+}

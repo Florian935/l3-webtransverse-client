@@ -17,7 +17,7 @@ export default function EditBook(props) {
   } = useLocation();
   const [formData, setFormData] = useState({ ...book });
   const history = useHistory();
-  const [updateBook, { data }] = useMutation(UPDATE_BOOK);
+  const [updateBook] = useMutation(UPDATE_BOOK);
 
   const getData = (key) => (formData.hasOwnProperty(key) ? formData[key] : '');
 

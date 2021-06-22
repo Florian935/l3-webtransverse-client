@@ -58,30 +58,42 @@ export default function Book(props) {
           <h2>List of all books:</h2>
           <ul>
             {data.books.map((book) => (
-              <li key={book._id} value={book.name}>
-                <div>
-                  <h3>Titre: {book.name}</h3>
-                  <p>Description: {book.description}</p>
-                </div>
-                <div>
-                  <Link
-                    className='link'
-                    to={{ pathname: `/book/edit/${book._id}`, state: { book } }}
-                  >
-                    Edit
-                  </Link>
-                  <Link
-                    className='link'
-                    onClick={(e) => onDeleteBook(e, book._id)}
-                  >
-                    Delete
-                  </Link>
-                </div>
-              </li>
+              <Link
+                key={book._id}
+                className='link-list-book'
+                to={{
+                  pathname: `/book/detail/${book._id}`,
+                  state: { book },
+                }}
+              >
+                <li key={book._id} value={book.name}>
+                  <div>
+                    <h3>Titre: {book.name}</h3>
+                  </div>
+                  <div>
+                    <Link
+                      className='link'
+                      to={{
+                        pathname: `/book/edit/${book._id}`,
+                        state: { book },
+                      }}
+                    >
+                      Edit
+                    </Link>
+                    <Link
+                      className='link'
+                      onClick={(e) => onDeleteBook(e, book._id)}
+                      to='/book'
+                    >
+                      Delete
+                    </Link>
+                  </div>
+                </li>
+              </Link>
             ))}
           </ul>
         </div>
-        <div className='add-book-container'>
+        <div className='add-book-button-list'>
           <Link to='/book/add' className='link'>
             Add book
           </Link>

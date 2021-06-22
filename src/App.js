@@ -8,6 +8,7 @@ import User from './components/users/User';
 import AddUser from './components/users/AddUser';
 import EditUser from './components/users/EditUser';
 import EditBook from './components/books/EditBook';
+import DetailBook from './components/books/DetailBook';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route exact path='/book/edit/:id'>
             <EditBook />
+          </Route>
+          <Route exact path='/book/detail/:id'>
+            <DetailBook />
           </Route>
           <Route exact path='/user'>
             <User />

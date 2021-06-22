@@ -17,7 +17,7 @@ export default function UserEdit(props) {
   } = useLocation();
   const [formData, setFormData] = useState({ ...user });
   const history = useHistory();
-  const [updateUser, { data }] = useMutation(UPDATE_USER);
+  const [updateUser] = useMutation(UPDATE_USER);
 
   const getData = (key) => (formData.hasOwnProperty(key) ? formData[key] : '');
 

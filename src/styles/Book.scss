@@ -1,9 +1,23 @@
 .book-container {
   width: 80%;
   margin: auto;
+  margin-top: 2%;
 
   .list-container {
-    margin: 10px;
+    margin: 1em;
+  }
+
+  .link-list-book {
+    text-decoration: none;
+    color: white;
+  }
+
+  h2 {
+    margin-bottom: 2em;
+  }
+
+  ul {
+    padding-inline-start: 0;
   }
 
   li {
@@ -11,9 +25,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 35px;
+    margin-bottom: 2.5em;
     background-color: #1b1b38;
-    padding: 20px;
+    padding: 1.5em;
     background: #1b1b38;
     border-radius: 3%;
     box-shadow: 5px 5px 12px #0e0e1c, -5px -5px 12px #29294d;
@@ -29,7 +43,7 @@
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
-    padding: 13px 25px;
+    padding: 0.8em 1.5em;
     margin: 20px 5px 5px 10px;
     border-radius: 4%;
     background: #1b1b38;
@@ -41,10 +55,29 @@
     }
   }
 
-  .add-book-container {
+  .add-book-button-list {
     margin-top: 50px;
     width: 100%;
     display: flex;
     justify-content: flex-end;
+  }
+}
+
+@media (max-width: 900px) {
+  .book-container {
+    width: 90%;
+    margin: auto;
+  }
+
+  .add-book-button-list {
+    margin-top: 1em;
+  }
+
+  li {
+    flex-direction: column;
+
+    div {
+      margin-bottom: 2em;
+    }
   }
 }
