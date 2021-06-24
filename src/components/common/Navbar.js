@@ -6,7 +6,7 @@ export default function Navbar(props) {
   return (
     <Fragment>
       <nav className='nav'>
-        <ul className='nav-list'>
+        <ul className='nav-list link'>
           <li>
             <Link to='/home' className='link'>
               Home
