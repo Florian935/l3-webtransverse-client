@@ -31,7 +31,7 @@ export default function AddBook(props) {
 
   return (
     <Fragment>
-      <div className='add-book-container'>
+      <div className='AddBook'>
         <h2>Add a new book:</h2>
         <div>
           <form onSubmit={onSubmitForm}>

@@ -1,23 +1,25 @@
-.AddBook {
+.AddUser {
   width: 80%;
   margin: auto;
   height: 10rem;
 
   .name-input,
-  .description-input {
+  .surname-input,
+  .login-input,
+  .password-input {
     width: 300px;
     display: flex;
     justify-content: space-between;
   }
 
   form {
+    height: 16em;
     display: flex;
-    height: 8rem;
     flex-direction: column;
     justify-content: space-evenly;
   }
 
-  .add-book-button {
+  .add-user-button {
     margin-top: 3em;
 
     .link {
