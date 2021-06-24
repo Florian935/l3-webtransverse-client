@@ -61,7 +61,7 @@ export default function AddUser(props) {
                 required
                 placeholder='Surname of the user'
                 value={getData('surname')}
-                onChange={(e) => setData('username', e.target.value)}
+                onChange={(e) => setData('surname', e.target.value)}
               />
             </div>
             <div className='login-input'>
