@@ -42,7 +42,7 @@ export default function EditBook(props) {
   return (
     <Fragment>
       <div className='EditBook'>
-        <h2>Edit user:</h2>
+        <h2>Edit book:</h2>
         <div>
           <form onSubmit={onSubmitForm}>
             <div className='name-input'>

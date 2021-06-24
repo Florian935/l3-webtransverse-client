@@ -1,0 +1,51 @@
+.EditUser {
+  width: 80%;
+  margin: auto;
+  height: 10rem;
+
+  h2 {
+    margin-bottom: 4em;
+  }
+
+  .name-input,
+  .surname-input,
+  .login-input,
+  .password-input {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+  }
+
+  form {
+    display: flex;
+    height: 8rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .link {
+    margin-right: 1em;
+    color: #fffbff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0.8em 1.5em;
+    border-radius: 4%;
+    background: #1b1b38;
+    box-shadow: 6px 6px 12px #111123, -6px -6px 12px #25254d;
+
+    &:hover {
+      background: #1b1b38;
+      box-shadow: 2px 2px 6px #111123, -2px -2px 6px #25254d;
+    }
+
+    &:focus {
+      box-shadow: inset 5px 5px 12px #111123, inset -5px -5px 12px #25254d;
+    }
+  }
+
+  .edit-book-button {
+    margin-top: 3em;
+  }
+}

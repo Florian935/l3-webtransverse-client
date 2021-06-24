@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import gpl from 'graphql-tag';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { Link } from 'react-router-dom';
+import '../../styles/User.scss';
 
 export const GET_USERS = gpl`
     query Users {
@@ -51,30 +52,52 @@ export default function User(props) {
 
   return (
     <Fragment>
-      <div className='container'>
-        <h4>List of all users:</h4>
-        <ul>
-          {data.users.map((user) => (
-            <li key={user._id} value={user.name}>
-              <h3>{user.name}</h3>
-              <div>{user.surname}</div>
-              <div>{user.login}</div>
-              <button>
-                <Link
-                  to={{ pathname: `/user/edit/${user._id}`, state: { user } }}
-                >
-                  Edit
-                </Link>
-              </button>
-              <button onClick={(e) => onDeleteUser(e, user._id)}>Delete</button>
-            </li>
-          ))}
-        </ul>
+      <div className='User'>
+        <div className='list-container'>
+          <h4>List of all users:</h4>
+          <ul>
+            {data.users.map((user) => (
+              <Link
+                key={user._id}
+                className='link-list-user'
+                to={{
+                  pathname: `/user/detail/${user._id}`,
+                  state: { user },
+                }}
+              >
+                <li key={user._id} value={user.name}>
+                  <div>
+                    <h3>{user.name}</h3>
+                  </div>
+                  <div>
+                    <Link
+                      className='link'
+                      to={{
+                        pathname: `/user/edit/${user._id}`,
+                        state: { user },
+                      }}
+                    >
+                      Edit
+                    </Link>
+                    <Link
+                      className='link'
+                      onClick={(e) => onDeleteUser(e, user._id)}
+                      to='/user'
+                    >
+                      Delete
+                    </Link>
+                  </div>
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </div>
+        <div className='add-user-button-list'>
+          <Link to='/user/add' className='link'>
+            Add user
+          </Link>
+        </div>
       </div>
-
-      <Link to='/user/add' className='link'>
-        Add user
-      </Link>
     </Fragment>
   );
 }

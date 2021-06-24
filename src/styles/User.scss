@@ -1,10 +1,10 @@
-.Book {
+.User {
   width: 80%;
   margin: auto;
   margin-top: 2%;
   padding-bottom: 2%;
 
-  .link-list-book {
+  .link-list-user {
     text-decoration: none;
     color: white;
   }
@@ -56,7 +56,7 @@
     }
   }
 
-  .add-book-button-list {
+  .add-user-button-list {
     margin-top: 50px;
     width: 100%;
     display: flex;
@@ -65,12 +65,12 @@
 }
 
 @media (max-width: 900px) {
-  .Book {
+  .User {
     width: 90%;
     margin: auto;
   }
 
-  .add-book-button-list {
+  .add-user-button-list {
     margin-top: 1em;
   }
 

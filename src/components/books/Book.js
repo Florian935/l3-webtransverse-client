@@ -53,7 +53,7 @@ export default function Book(props) {
 
   return (
     <Fragment>
-      <div className='book-container'>
+      <div className='Book'>
         <div className='list-container'>
           <h2>List of all books:</h2>
           <ul>
